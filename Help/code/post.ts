@@ -14,9 +14,7 @@ class Component implements OnInit {
 
   public errorMsg!: string;
 
-  nModels!: NModel;
-
-    nModel: NModel = {
+    runner: NModel = {
       id: 0,
       categoryId: 0,
       nev: "",
@@ -29,24 +27,23 @@ class Component implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.idFromRoute = params["id"];
     });
-
     this.getAll();
   }
 
   getAll(): void {
     this.apiService.getByNumber(this.categoryFromRoute).subscribe({
-      next: result => this.nModel = result,
+      next: result => this.runner = result,
       error: err => console.log(err)
     })
   }
 
   send() {
-    this.nModel.categoryId = Number(this.idFromRoute);
+    this.runner.categoryId = Number(this.idFromRoute);
     try {
-      if (!this.nModel.nev) {
+      if (!this.runner.nev) {
         this.errorMsg = "Enter valid name!";
       }
-      this.apiService.post(this.nModel);
+      this.apiService.post(this.runner);
     } catch (error) {
       console.log(error);
     }

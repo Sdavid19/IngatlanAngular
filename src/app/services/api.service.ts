@@ -14,27 +14,27 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<NModel[]>{
-    return this.http.get<NModel[]>(`${this.apiUrl}/something`);
+    return this.http.get<NModel[]>(`${this.apiUrl}/runners`);
   }
 
   getAllByNumber(num: number | string): Observable<NModel[]>{
-    return this.http.get<NModel[]>(`${this.apiUrl}/something/${num}`);
+    return this.http.get<NModel[]>(`${this.apiUrl}/runners/${num}`);
   }
 
     getByNumber(num: number | string): Observable<NModel>{
-    return this.http.get<NModel>(`${this.apiUrl}/something/${num}`);
+    return this.http.get<NModel>(`${this.apiUrl}/runner/${num}`);
   }
 
   getAllCategory(): Observable<CategoryModel[]>{
-    return this.http.get<CategoryModel[]>(`${this.apiUrl}/something`);
+    return this.http.get<CategoryModel[]>(`${this.apiUrl}/category`);
   }
 
   getCategoryByNumber(num: number | string): Observable<CategoryModel>{
-    return this.http.get<CategoryModel>(`${this.apiUrl}/something/${num}`);
+    return this.http.get<CategoryModel>(`${this.apiUrl}/category/${num}`);
   }
 
   post(model: NModel): Observable<any[]> {
-    return this.http.post<any[]>(`${this.apiUrl}/something`, model);
+    return this.http.post<any[]>(`${this.apiUrl}/runner`, model);
   }
 
 }
