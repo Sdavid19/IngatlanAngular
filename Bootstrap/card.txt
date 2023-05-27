@@ -1,0 +1,9 @@
+<div class="card m-4">
+    <img src="https://picsum.photos/500/500" class="card-img-top" alt="kep">
+    <div class="card-body">
+        <h5 class="card-title">Nagy Béla</h5>
+        <p>Rajtszám: 2015</p>
+        <p>Születési idő: 2023</p>
+        <p>Korosztály: junior</p>
+    </div>
+</div>

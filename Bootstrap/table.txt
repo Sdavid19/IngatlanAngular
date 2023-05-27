@@ -1,0 +1,21 @@
+<div class="container d-flex align-items-center" style="height: 100vh;">
+    <table class="table text-center shadow" style="vertical-align: middle;">
+        <thead>
+            <tr>
+                <th>Kategória</th>
+                <th>Leírás</th>
+                <th>Hirdetés dátuma</th>
+                <th>Tehermentes</th>
+                <th>Fénykép</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>2023.05.23</td>
+                <td>Igaz</td>
+                <td><img src="https://picsum.photos/300/300" alt="kep"></td>
+            </tr>
+    </table>
+</div>
