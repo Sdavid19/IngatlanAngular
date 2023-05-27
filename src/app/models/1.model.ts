@@ -1,4 +1,4 @@
-export interface OneModel{
+export interface CategoryModel{
   id: number,
   nev: string,
 }
