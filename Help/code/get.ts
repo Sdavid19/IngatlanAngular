@@ -1,6 +1,6 @@
 import { OnInit } from "@angular/core";
-import { CategoryModel } from "src/app/models/1.model";
-import { NModel } from "src/app/models/n.model";
+import { CategoryModel } from "src/app/models/category.model";
+import { RunnerModel } from "src/app/models/runner.model";
 import { ApiService } from "src/app/services/api.service";
 
 class Component implements OnInit {
@@ -9,7 +9,7 @@ class Component implements OnInit {
 
   selectedCategory = '';
 
-  runners: NModel[] = [];
+  runners: RunnerModel[] = [];
 
   constructor(private apiService: ApiService) {}
 

@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { NModel } from '../models/n.model';
-import { CategoryModel } from '../models/1.model';
+import { RunnerModel } from '../models/runner.model';
+import { CategoryModel } from '../models/category.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,18 +13,6 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<NModel[]>{
-    return this.http.get<NModel[]>(`${this.apiUrl}/runners`);
-  }
-
-  getAllByNumber(num: number | string): Observable<NModel[]>{
-    return this.http.get<NModel[]>(`${this.apiUrl}/runners/${num}`);
-  }
-
-    getByNumber(num: number | string): Observable<NModel>{
-    return this.http.get<NModel>(`${this.apiUrl}/runner/${num}`);
-  }
-
   getAllCategory(): Observable<CategoryModel[]>{
     return this.http.get<CategoryModel[]>(`${this.apiUrl}/category`);
   }
@@ -33,7 +21,19 @@ export class ApiService {
     return this.http.get<CategoryModel>(`${this.apiUrl}/category/${num}`);
   }
 
-  post(model: NModel): Observable<any[]> {
+  getAll(): Observable<RunnerModel[]>{
+    return this.http.get<RunnerModel[]>(`${this.apiUrl}/runners`);
+  }
+
+  getAllByNumber(num: number | string): Observable<RunnerModel[]>{
+    return this.http.get<RunnerModel[]>(`${this.apiUrl}/runners/${num}`);
+  }
+
+  getByNumber(num: number | string): Observable<RunnerModel>{
+    return this.http.get<RunnerModel>(`${this.apiUrl}/runner/${num}`);
+  }
+
+  post(model: RunnerModel): Observable<any[]> {
     return this.http.post<any[]>(`${this.apiUrl}/runner`, model);
   }
 

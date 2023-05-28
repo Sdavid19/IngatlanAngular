@@ -1,7 +1,7 @@
 import { OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Subscription } from "rxjs";
-import { NModel } from "src/app/models/n.model";
+import { RunnerModel } from "src/app/models/runner.model";
 import { ApiService } from "src/app/services/api.service";
 
 class Component implements OnInit {
@@ -14,7 +14,7 @@ class Component implements OnInit {
 
   public errorMsg!: string;
 
-    runner: NModel = {
+    runner: RunnerModel = {
       id: 0,
       categoryId: 0,
       nev: "",
