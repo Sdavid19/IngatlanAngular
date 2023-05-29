@@ -27,10 +27,10 @@ class Component implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.idFromRoute = params["id"];
     });
-    this.getAll();
+    this.get();
   }
 
-  getAll(): void {
+  get(): void {
     this.apiService.getByNumber(this.categoryFromRoute).subscribe({
       next: result => this.runner = result,
       error: err => console.log(err)
@@ -38,7 +38,7 @@ class Component implements OnInit {
   }
 
   send() {
-    this.runner.categoryId = Number(this.idFromRoute);
+    this.runner.categoryId = +this.idFromRoute;
     try {
       if (!this.runner.nev) {
         this.errorMsg = "Enter valid name!";
