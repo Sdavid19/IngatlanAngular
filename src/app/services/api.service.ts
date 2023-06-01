@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { RunnerModel } from '../models/runner.model';
+import { IngatlanModel } from '../models/ingatlan.model';
 import { CategoryModel } from '../models/category.model';
 
 @Injectable({
@@ -9,32 +9,20 @@ import { CategoryModel } from '../models/category.model';
 })
 export class ApiService {
 
-  apiUrl = "http://127.0.0.1:8000/api"
+  apiUrl = "http://localhost:5000/api"
 
   constructor(private http: HttpClient) { }
 
   getAllCategory(): Observable<CategoryModel[]>{
-    return this.http.get<CategoryModel[]>(`${this.apiUrl}/category`);
+    return this.http.get<CategoryModel[]>(`${this.apiUrl}/kategoriak`);
   }
 
-  getCategoryByNumber(num: number | string): Observable<CategoryModel>{
-    return this.http.get<CategoryModel>(`${this.apiUrl}/category/${num}`);
+  getAll(): Observable<IngatlanModel[]>{
+    return this.http.get<IngatlanModel[]>(`${this.apiUrl}/ingatlan`);
   }
 
-  getAll(): Observable<RunnerModel[]>{
-    return this.http.get<RunnerModel[]>(`${this.apiUrl}/runners`);
-  }
-
-  getAllByNumber(num: number | string): Observable<RunnerModel[]>{
-    return this.http.get<RunnerModel[]>(`${this.apiUrl}/runners/${num}`);
-  }
-
-  getByNumber(num: number | string): Observable<RunnerModel>{
-    return this.http.get<RunnerModel>(`${this.apiUrl}/runner/${num}`);
-  }
-
-  post(model: RunnerModel): Observable<any[]> {
-    return this.http.post<any[]>(`${this.apiUrl}/runner`, model);
+  post(model: IngatlanModel): Observable<any[]> {
+    return this.http.post<any[]>(`${this.apiUrl}/ujingatlan`, model);
   }
 
 }

@@ -1,6 +1,6 @@
 import { OnInit } from "@angular/core";
 import { CategoryModel } from "src/app/models/category.model";
-import { RunnerModel } from "src/app/models/runner.model";
+import { RunnerModel } from "src/app/models/ingatlan.model";
 import { ApiService } from "src/app/services/api.service";
 
 class Component implements OnInit {

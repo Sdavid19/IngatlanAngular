@@ -1,4 +1,4 @@
 export interface CategoryModel{
   id: number,
-  nev: string,
+  megnevezes: string,
 }
